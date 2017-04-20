@@ -1,5 +1,4 @@
 def walk(state):
-    print("walk")
     # no one on first
     if not state[0]:
         return (True, state[1], state[2], state[3], state[4], state[5], (state[6]+1)%9)
@@ -13,8 +12,8 @@ def walk(state):
     else:
         return (True, True, True, state[3], state[4], state[5]+1, (state[6]+1)%9)
 
+
 def strikeout(state):
-    print("strikeout")
     # 2 outs
     if state[4] == 2:
         # not last inning
@@ -26,8 +25,8 @@ def strikeout(state):
     else:
         return (state[0], state[1], state[2], state[3], state[4]+1, state[5], (state[6]+1)%9)
 
+
 def single(state):
-    print("single")
     score = state[5]
     # People on 2nd and 3rd score
     if state[1]:
@@ -40,8 +39,8 @@ def single(state):
     else:
         return (True, False, False, state[3], state[4], score, (state[6]+1)%9)
 
+
 def double(state):
-    print("double")
     score = state[5]
     # People on 1st, 2nd, and 3rd score
     if state[0]:
@@ -52,8 +51,8 @@ def double(state):
         score += 1
     return (False, True, False, state[3], state[4], score, (state[6]+1)%9)
 
+
 def triple(state):
-    print("triple")
     score = state[5]
     # People on 1st, 2nd, and 3rd score
     if state[0]:
@@ -64,8 +63,8 @@ def triple(state):
         score += 1
     return (False, False, True, state[3], state[4], score, (state[6]+1)%9)
 
+
 def homerun(state):
-    print("homerun")
     # batter scores
     score = state[5] + 1
     # People on 1st, 2nd, and 3rd score
@@ -77,8 +76,8 @@ def homerun(state):
         score += 1
     return (False, False, False, state[3], state[4], score, (state[6]+1)%9)
 
+
 def out_advance_runners(state):
-    print("out advance")
     if state[4] == 2:
         # not last inning
         if state[3] < 7:
@@ -94,8 +93,8 @@ def out_advance_runners(state):
         # everyone goes forward one
         return (False, state[0], state[1], state[3], state[4]+1, state[5], (state[6]+1)%9)
 
+
 def out_no_advance(state):
-    print("out no advance")
     # if already 2 outs
     if state[4] == 2:
         # not last inning
@@ -106,6 +105,7 @@ def out_no_advance(state):
             return
     else:
         return (state[0], state[1], state[2], state[3], state[4]+1, state[5], (state[6]+1)%9)
+
 
 # # Testing
 # # state defined as (on 1st, on 2nd, on 3rd, inning, outs, score, batter index)
