@@ -129,17 +129,3 @@ def out_no_advance(state):
     else:
         return (state[0], state[1], state[2], state[3], state[4]+1, state[5], (state[6]+1)%9)
 
-
-# # Testing
-# # state defined as (on 1st, on 2nd, on 3rd, inning, outs, score, batter index)
-# outcomes = [single, double, triple, homerun, out_advance_runners, out_no_advance, walk, strikeout]
-# for outcome in outcomes:
-#     # begin = (False, False, False, 1, 0, 0, 0)
-#     # print("begin game")
-#     # print(begin)
-#     # print(outcome(begin))
-#     onfirst = (True, False, False, 1, 0, 0, 0)
-#     print("on first")
-#     print(onfirst)
-#     print(outcome(onfirst))
-
