@@ -1,3 +1,5 @@
+# Data about each player
+
 jasmin = {
     "name": "Jasmin",
     "walk": 0.07692307692,

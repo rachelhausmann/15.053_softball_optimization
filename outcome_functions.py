@@ -1,3 +1,5 @@
+# functions to describe what happens for each possibility of what can happen at bat
+
 # state defined as (on 1st, on 2nd, on 3rd, inning, outs, score, batter index)
 # end of game is ("end", score)
 
