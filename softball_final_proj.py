@@ -61,11 +61,11 @@ for attempt in best_orders:
         # reset probability of beginning state to 0 so that if we come back to that state it doesn't have distorted
         # probability
         state_prob[state] = 0
-    print (exp_score, order)
     scores_list.append((exp_score, order))
 
 # see the best orders in order
 scores_list.sort(reverse=True)
+# Printing the scores in the best order
 print scores_list
 
 
